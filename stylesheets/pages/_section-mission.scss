@@ -1,0 +1,313 @@
+.section-mission {
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 82px;
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  .small-title {
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    margin-bottom: 20px;
+  }
+
+  .section-subheading {
+    margin: 0 auto 20px;
+    max-width: 480px;
+
+    font-style: italic;
+  }
+
+  p {
+    margin-bottom: 30px;
+    color: $text-color;
+  }
+
+  .mission-title-wrapper {
+    margin-bottom: 47px;
+  }
+
+  .mission-holder {
+    position: relative;
+    padding-top: 28px;
+    // margin-bottom: 92px;
+    margin-bottom: 150px;
+
+    .small-title {
+      margin-bottom: 5px;
+      font-size: 18px;
+      line-height: 37px;
+      letter-spacing: 4px;
+    }
+
+    .mission-title {
+      margin-bottom: 25px;
+    }
+
+    .mission-image {
+      position: relative;
+      margin-top: 6px;
+
+      img {
+        position: relative;
+        z-index: 10;
+      }
+    }
+
+    .mission-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    &.container {
+      max-width: 1310px;
+
+      &.right {
+        margin-right: 0;
+        padding-right: 0;
+
+        .mission-content {
+          padding-right: 70px;
+        }
+
+        .mission-image {
+          position: relative;
+          margin-top: 6px;
+
+          img {
+            position: relative;
+            z-index: 10;
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            z-index: 5;
+            right: 0;
+            bottom: -105px;
+
+            width: 80.5%;
+            height: 100%;
+
+            background: $yellow;
+          }
+
+          &:after {
+            content: '';
+            z-index: 12;
+            position: absolute;
+            bottom: -185px;
+            right: 10%;
+            width: 48px;
+            height: 48px;
+            background: url($base-url+'images/blue-plus.png') no-repeat;
+            background-size: contain;
+          }
+        }
+
+        &:nth-of-type(4) {
+          .mission-image {
+            &:after {
+              bottom: -181px;
+              right: 71.5%;
+              width: 125px;
+              height: 125px;
+              background: url($base-url+'images/blue-dots.png') no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+      }
+
+      &.left {
+        margin-left: 0;
+        padding-left: 0;
+
+        .mission-content {
+          padding-left: 80px;
+          // margin-top: 45px;
+        }
+
+        .mission-image {
+          &:before {
+            content: '';
+            position: absolute;
+            z-index: 5;
+            left: 0;
+            bottom: -85px;
+
+            width: 80.5%;
+            height: 100%;
+
+            background: $brand-color;
+          }
+        }
+
+        &:nth-of-type(5) {
+          &:after {
+            content: '';
+            z-index: 12;
+            position: absolute;
+            bottom: -186px;
+            left: 7%;
+            width: 45px;
+            height: 45px;
+            background: url($base-url+'images/yellow-plus.png') no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1441px) {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  @include respond-to(xl) {
+    .container {
+      max-width: 1185px;
+    }
+  }
+  
+  @media (min-width: 1200px) and (max-width: 1360px) {
+    .mission-holder.container {
+      max-width: calc(100% - 60px);
+    }
+  }
+
+  @include respond-to(lg-down) {
+    padding-bottom: 120px;
+
+    .mission-holder {
+      margin-bottom: 40px;
+
+      &.container {
+        max-width: 96%;
+
+        &.right {
+          .mission-content {
+            padding-right: 40px;
+          }
+
+          .mission-image:before {
+            bottom: -55px;
+          }
+
+          &:nth-of-type(4) {
+            margin-bottom: 130px;
+
+            .mission-image:after {
+              bottom: -130px;
+            }
+          }
+        }
+
+        &.left .mission-content {
+          padding-left: 40px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(md-down) {
+    padding-top: 70px;
+    padding-bottom: 0;
+
+    .small-title {
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      margin-bottom: 5px;
+    }
+  }
+
+  @include respond-to(md) {
+    .mission-holder {
+      &.container.right {
+        &:nth-of-type(4) {
+          margin-bottom: 9%;
+        }
+      }
+    }
+    
+    .mission-holder.container.left:nth-of-type(5):after {
+      bottom: -15px;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    padding-bottom: 40px;
+
+    .mission-holder .small-title {
+      line-height: 20px;
+    }
+    
+    .mission-holder.container {
+      margin-bottom: 90px;
+
+      &.left {
+        .mission-content {
+          padding-left: 45px;
+
+          order: -1;
+        }
+
+        .mission-image:before {
+          bottom: -60px;
+        }
+
+        &:nth-of-type(5):after {
+          width: 35px;
+          height: 35px;
+          bottom: -115px;
+        }
+      }
+
+      &.right {
+        .mission-content {
+          padding-right: 25px;
+        }
+
+        .mission-image:after {
+          width: 35px;
+        }
+
+        .mission-image:before {
+          bottom: -60px;
+        }
+
+        &:nth-of-type(4) .mission-image:after {
+          bottom: -110px;
+          right: 64.5%;
+          width: 95px;
+          height: 95px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(xs) {
+    padding-bottom: 45px;
+
+    .section-subheading {
+      max-width: 93%;
+    }
+
+    .mission-holder.container {
+      &.left {
+        .mission-content {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+}

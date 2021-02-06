@@ -1,0 +1,145 @@
+.section-playbook {
+  position: relative;
+  margin-top: 75px;
+  padding: 77px 0 76px;
+  background-color: $yellow;
+
+  &:before {
+    content: '';
+    z-index: 10;
+    position: absolute;
+  }
+
+  &:before {
+    top: 62px;
+    right: 0;
+    width: 109px;
+    height: 141px;
+    background: url($base-url+'images/blue-dots.png') no-repeat;
+    background-size: cover;
+  }
+
+  .section-title,
+  .small-title,
+  p {
+    color: $brand-color;
+  }
+
+  .small-title {
+    margin-bottom: 17px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.53em;
+  }
+
+  h2 {
+    margin-bottom: 13px;
+    max-width: 300px;
+
+    font-size: 45px;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  p {
+    max-width: 80%;
+  }
+
+  .btn {
+    display: inline-flex;
+    padding: 0 30px;
+    margin: 40px auto 0;
+  }
+
+  .col-second {
+    padding-left: 65px;
+  }
+
+  .image-holder {
+    position: absolute;
+    top: -132px;
+    left: -174px;
+
+    img {
+      width: 690px;
+    }
+  }
+
+  @include respond-to(lg-down) {
+    h2 {
+      font-size: 38px;
+    }
+
+    .image-holder {
+      position: relative;
+      top: unset;
+      left: -10%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+  
+  @include respond-to(md-down) {
+    &:before {
+      width: 80px;
+      height: 110px;
+    }
+
+    h2 {
+      font-size: 34px;
+    }
+
+    .container {
+      max-width: 100%;
+    }
+
+    .col-second {
+      padding-left: 15px;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    margin-top: 0;
+
+    .col-second {
+      text-align: center;
+    }
+
+    .section-title,
+    .small-title,
+    p {
+      max-width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .image-holder {
+      margin: 0 auto 30px;
+      width: 100%;
+      max-width: 400px;
+
+      img {
+        margin-left: -2%;
+        width: 100%;
+      }
+    }
+  }
+  
+  @include respond-to(xs) {
+    &:before {
+      width: 40px;
+      height: 90px;
+    }
+
+    &:after {
+      display: none;
+    }
+    
+    h2 {
+      font-size: 32px;
+    }
+  }
+}

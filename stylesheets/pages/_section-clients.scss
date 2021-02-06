@@ -1,0 +1,180 @@
+.section-clients {
+  position: relative;
+  // padding-top: 175px;
+  padding-top: 143px;
+
+  &:before {
+    content: '';
+    z-index: 10;
+    position: absolute;
+    bottom: -82px;
+    right: 37.4%;
+    width: 150px;
+    height: 150px;
+    background: url($base-url+'images/yellow-dots.png') no-repeat;
+    background-size: contain;
+  }
+
+  .container {
+    padding-right: 0;
+    margin-right: 0;
+
+    .row {
+      margin-right: 0;
+    }
+  }
+
+  .small-title {
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    margin-bottom: 57px;
+  }
+
+  p {
+    margin-bottom: 5px;
+    color: $text-color;
+  }
+
+  .col-first {
+    padding-right: 95px;
+  }
+
+  .col-second {
+    padding-right: 0;
+    padding-left: 40px;
+    margin-top: 18px;
+  }
+
+  .client-logos {
+    padding: 78px 40px;
+    height: 725px;
+    background-color: $brand-color;
+
+    .small-title {
+      padding-left: 88px;
+      color: $white;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+
+      margin-top: 65px;
+      height: 93%;
+
+      .logo-holder {
+        display: flex;
+        flex-basis: 45%;
+        align-items: center;
+        justify-content: center;
+
+        height: 90px;
+
+        &:nth-child(odd) {
+          margin-right: 5%;
+        }
+
+        img {
+          width: 100%;
+          max-width: 218px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1441px) {
+    max-width: 1180px;
+    margin: 0 auto;
+
+    .col-first {
+      padding-right: 35px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1345px;
+    }
+  }
+
+  @media (min-width: 1200px) and (max-width: 1360px) {
+    .container {
+      max-width: calc(100% - 60px);
+    }
+  }
+
+  @include respond-to(lg-down) {
+    padding-top: 80px;
+
+    &:before {
+      width: 120px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .small-title {
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 95%;
+    }
+
+    .col-first {
+      padding-right: 0;
+    }
+
+    .client-logos {
+      padding: 50px 30px;
+      height: 680px;
+
+      .small-title {
+        padding-left: 20px;
+      }
+    }
+
+    .client-logos-wrapper .logo-holder img {
+      max-width: 165px;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    &:before {
+      top: 15px;
+      right: 7px;
+      width: 65px;
+    }
+
+    .container {
+      margin: 0 auto;
+    }
+
+    .col-first {
+      padding-right: 15px;
+    }
+
+    .col-second {
+      margin-top: 40px;
+      padding: 0;
+    }
+
+    .client-logos {
+      padding: 50px 20px 70px;
+      height: 100%;
+
+      .small-title {
+        padding-left: 0;
+        text-align: center;
+      }
+    }
+
+    .client-logos-wrapper {
+      margin-top: 20px;
+      height: 100%;
+    }
+  }
+}

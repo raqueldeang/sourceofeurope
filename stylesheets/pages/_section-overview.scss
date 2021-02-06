@@ -1,0 +1,119 @@
+.section-overview {
+  position: relative;
+  padding-bottom: 75px;
+
+  .overview-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: -73px auto 0;
+    width: 100%;
+    max-width: 1105px;
+  }
+
+  .mission {
+    &-card {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 258px;
+      height: 162px;
+
+      background: $white;
+      border: 1px solid $athens-grey;
+      border-radius: 8px;
+      cursor: pointer;
+
+      transition: all .2s ease;
+
+      @include on-event() {
+        color: $white;
+        background: $bunting;
+        border-color: $bunting;
+
+        .mission-icon > path,
+        .mission-icon > g > path {
+          fill: $white;
+        }
+
+        .mission-title {
+          color: $white;
+        }
+      }
+    }
+
+    &-icon {
+      margin-bottom: 15px;
+    }
+
+    &-title {
+      padding: 0 5px;
+
+      font-family: $font-muli-bold;
+      font-size: 19px;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: 0.4px;
+      color: $bunting;
+    }
+  }
+
+  @include respond-to(lg-down) {
+    padding-bottom: 80px;
+
+    .container {
+      max-width: 95%;
+    }
+
+    .overview-wrapper {
+      max-width: 100%;
+    }
+
+    .mission-card {
+      flex-basis: calc(90% / 4);
+    }
+  }
+
+  @include respond-to(md-down) {
+    .mission-title {
+      font-size: 16px;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    .overview-wrapper {
+      flex-wrap: wrap;
+      max-width: 600px;
+    }
+
+    .mission-card {
+      margin-bottom: 15px;
+      flex-basis: calc(95% / 2);
+    }
+  }
+
+  @include respond-to(xs) {
+    padding: 25px 0 35px;
+
+    .mission {
+      &-card {
+        height: 140px;
+      }
+
+      &-icon {
+        margin-bottom: 8px;
+        width: 40px;
+        height: 40px;
+      }
+
+      &-title {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+  }
+}

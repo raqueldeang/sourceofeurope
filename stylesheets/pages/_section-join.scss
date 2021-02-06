@@ -1,0 +1,98 @@
+.section-join {
+  position: relative;
+  padding: 110px 0 80px;
+  background-color: $mercury;
+
+  &:before {
+    content: '';
+    z-index: 10;
+    position: absolute;
+  }
+
+  &:before {
+    top: 153px;
+    left: -50px;
+    width: 175px;
+    height: 175px;
+    background: url($base-url+'images/blue-dots.png') no-repeat;
+    background-size: contain;
+  }
+
+  .small-title {
+    color: $yellow;
+  }
+
+  .small-title {
+    margin-bottom: 17px;
+
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+  }
+
+  h2 {
+    margin-bottom: 18px;
+
+    font-size: 47px;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: $black;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .btn {
+    display: inline-flex;
+    margin: 60px auto 0;
+
+    @include on-event {
+      color: $white;
+      background-color: $brand-color;
+      border-color: $brand-color;
+    }
+  }
+
+  @include respond-to(lg-down) {
+    h2 {
+      font-size: 38px;
+    }
+  }
+  
+  @include respond-to(md-down) {
+    h2 {
+      font-size: 34px;
+    }
+
+    &:before {
+      width: 145px;
+      height: 145px;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    padding: 60px 0;
+
+    &:before {
+      left: -70px;
+    }
+
+    .btn {
+      margin: 30px auto 0;
+    }
+  }
+
+  @include respond-to(xs) {
+    &:before {
+      top: 42px;
+      left: -36px;
+      width: 73px;
+      height: 73px;
+    }
+    
+    h2 {
+      font-size: 32px;
+    }
+  }
+}

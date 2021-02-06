@@ -1,0 +1,245 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+
+  @include on-event {
+    text-decoration: underline;
+  }
+}
+
+.btn,
+a {
+  @include transition(all 0.2s ease-in-out);
+  cursor: pointer;
+  
+  @include on-event {
+    outline: 0;
+    text-decoration: none;
+    @include boxshadow(none);
+  }
+}
+
+img {
+  display: block;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-focus-ring-color: none;
+  outline: none;
+
+  @include on-event {
+    @include boxshadow(none);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1220px;
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 45px;
+  height: 45px;
+  
+  font-family: $font-mplus;
+  // font-weight: 800;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  border-radius: 36px;
+
+  &-primary {
+    color: $white;
+
+    font-size: 13.5px;
+    letter-spacing: 2px;
+    line-height: 20px;
+    background-color: $brand-color;
+    border-color: $brand-color;
+
+    @include on-event {
+      color: $brand-color;
+      background-color: $white;
+      border-color: $white;
+    }
+  }
+
+  &-secondary {
+    color: $white;
+
+    font-size: 13.5px;
+    letter-spacing: 2px;
+    line-height: 20px;
+    background-color: $yellow;
+    border-color: $yellow;
+
+    @include on-event {
+      color: $brand-color;
+      background-color: $white;
+      border-color: $white;
+    }
+  }
+
+  &-outline {
+    margin-right: auto;
+    margin-left: auto;
+
+    font-size: 13.5px;
+    letter-spacing: 2px;
+    line-height: 20px;
+    color: $white;
+
+    background-color: transparent;
+    border: 3px solid $white;
+
+    @include on-event {
+      color: $brand-color;
+      background-color: $white;
+      border-color: $white;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    &-secondary {
+      font-size: 12px;
+    }
+  }
+}
+
+[data-toggle="collapse"] {
+  &[aria-expanded="true"] .is-collapsed {
+    display: none;
+  }
+  &[aria-expanded="false"] .not-collapsed  {
+    display: none;
+  }
+}
+
+.toggle-more {
+  display: inline;
+  padding: 5px 0;
+  margin: 45px auto 0;
+  
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $white;
+  cursor: pointer;
+  
+  border-bottom: 1px solid $white;
+  @include transition(all 0.2s ease-in-out);
+
+  @include on-event() {
+    color: $yellow;
+    border-color: $yellow;
+  }
+}
+
+
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: $brand-color;
+
+  .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: $yellow;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+
+  @include respond-to(sm-down) {
+    img {
+      width: 60px;
+    }
+  }
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}

@@ -1,0 +1,116 @@
+
+footer {
+  padding: 95px 0 50px;
+
+  .company-address {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    max-width: 320px;
+
+    img {
+      margin-right: 20px;
+    }
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: $brand-color;
+
+    text-shadow: 0px 0px 5px $mercury;
+  }
+
+  .social-media-links {
+    margin-left: 75px;
+
+    .list-inline-item {
+      a {
+        font-size: 18px;
+        color: $french-gray;
+
+        @include on-event() {
+          color: $brand-color;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 23px;
+      }
+    }
+  }
+
+  .footer-links {
+    margin-top: 10px;
+    margin-bottom: 95px;
+
+    .list-inline-item {
+      a {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+  
+        letter-spacing: 0.05em;
+        text-transform: capitalize;
+  
+        color: $brand-color;
+  
+        text-shadow: 0px 0px 5px $mercury;
+      }
+
+      &:not(:last-child) {
+        margin-right: 47px;
+      }
+    }
+  }
+
+  .copyright-text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    text-align: right;
+    color: $light-gray;
+  }
+
+  @include respond-to(md-down) {
+    padding: 50px 0 40px;
+
+    .container {
+      max-width: 97%;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    .container {
+      max-width: 100%;
+    }
+
+    .company-address {
+      margin: 0 auto 20px;
+
+      img {
+        margin-right: 10px;
+      }
+    }
+
+    .social-media-links,
+    .footer-links {
+      margin: 0 auto 20px;
+      text-align: center;
+    }
+
+    .footer-links .list-inline-item:not(:last-child) {
+      margin-right: 9%;
+    }
+
+    .copyright-text {
+      text-align: center;
+    }
+  }
+}
