@@ -1,6 +1,6 @@
 node_modules/
-stylesheets/main.min.css/
-javascript/main.min.js/
+javascripts/main.min.js
+stylesheets/main.min.css
 
 package-lock.json
 yarn.lock
