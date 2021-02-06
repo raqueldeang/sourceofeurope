@@ -5,17 +5,17 @@
  */
 body {
   color: $text-color;
-  font: normal 125% / 1.4 $font-mplus;
+  font: normal 125% / 1.4 $font-montserrat;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
-  font-family: $font-mplus;
+  font-family: $font-montserrat;
   padding: 0;
   margin: 0;
 }
 
 a {
-  font-family: $font-mplus;
+  font-family: $font-montserrat;
   font-weight: 400;
   color: $brand-color;
 }
@@ -50,7 +50,7 @@ p {
 
 .small-title {
   display: block;
-  font-family: $font-mplus;
+  font-family: $font-montserrat;
   font-weight: 700;
   font-size: 12.6px;
   letter-spacing: 6px;
